@@ -1,7 +1,7 @@
 ## -*- coding: utf-8 -*-
 import web
 import hashlib
-SALTY_GOODNESS = u'5gR3dvtres$@;1£56u&&$"FDBDaskkllaq $£1234gSSgr'
+SALTY_GOODNESS = u'5gR3dvtres$@;1£56u&&$"FDergjngrekjkj4223234erwgnkvgdvdfkm'
 
 #Must be set by the thing importing this module
 collection = None
