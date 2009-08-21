@@ -1,0 +1,17 @@
+<%inherit file="base.html"/>
+${self.errormsg('__all__')}
+<h1>${self.pagename()}</h1>
+% if user is not UNDEFINED and user:
+    <p>Already logged in!!</p>
+% else:
+    <form action="" method="POST">
+        <input type="hidden" name="next" value="${next}">
+        ${self.errormsg('username')}
+        <p><label for="username">Username</label><input name="username" id="username" type="text"></p>
+        ${self.errormsg('password')}
+        <p><label for="password">Password</label><input name="password" id="password" type="password"></p>  
+        <p><input name="login" type="submit" value="Login"></p>
+    </form>
+% endif
+
+<%def name="pagename()">Login</%def>

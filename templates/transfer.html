@@ -1,0 +1,81 @@
+<%inherit file="base.html"/>
+<h1>${self.pagename()}</h1>
+
+% if success:
+    <h2>Success</h2>
+    <p>
+    % if mode == "to":
+        You gave ${value} to ${self.userlink(to_user['username'])}.
+    % else:
+        ${self.userlink(from_user['username'])} gave you ${value}.
+    % endif
+    </p>
+% else:
+<div id="money-out">
+<header>Money Out</header>
+<section>
+  <form action="" method="POST">
+        <p>
+            <label for="to_value_pounds">I gave / I'm owed...</label>
+            ${self.errormsg('to_value')}
+            ${self.errormsg('to_value_pounds')}
+            <span class="currency-sign">£</span><input type="text" name="to_value_pounds" id="to_value_pounds"><span class="currency-delim">.</span>
+            ${self.errormsg('to_value_pence')}
+            <input type="text" name="to_value_pence" id="to_value_pence">
+        </p>
+        <p>
+            <label for="to_username">... to / from ... </label>
+            ${self.errormsg('to_username')}
+            <select name="to_username" id="to_username">
+                % for c in user['contacts']:
+                    <option value="${c['username']}">${c['username']}</option>
+                % endfor
+            </select>
+        </p>
+        <p>
+            ${self.errormsg('to_reason')}
+            <label for="to_reason">... for ...</label><input type="text" name="to_reason" id="to_reason">
+        </p>
+        <p>
+            <input type="submit" name="submit" value="Go" class="submit">
+        </p>
+    </form>
+</section>
+</div>
+<div id="money-in">
+<header>Money In</header>
+<section>
+    <form action="" method="POST">
+        <p>
+            <label for="from_value_pounds">I received / I owe...</label>
+            ${self.errormsg('from_value')}
+            ${self.errormsg('from_value_pounds')}
+            <span class="currency-sign">£</span><input type="text" name="from_value_pounds" id="from_value_pounds"><span class="currency-delim">.</span>
+            ${self.errormsg('from_value_pence')}
+            <input type="text" name="from_value_pence" id="from_value_pence">
+        </p>
+  
+        <p>
+            <label for="to_username">... from / to ... </label>
+            ${self.errormsg('from_username')}
+            <select name="from_username" id="from_username">
+                % for c in user['contacts']:
+                    <option value="${c['username']}">${c['username']}</option>
+                % endfor
+            </select>
+        </p>
+        <p>
+            ${self.errormsg('from_reason')}
+            <label for="from_reason">... for ...</label><input type="text" name="from_reason" id="from_reason">
+        </p>
+        <p>
+            <input type="submit" name="submit" value="Go" class="submit">
+        </p>
+    </form>
+</section>
+</div>
+% endif
+            
+<%def name="pagename()">
+Transfer
+</%def>

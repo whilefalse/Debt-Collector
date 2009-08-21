@@ -1,0 +1,13 @@
+<%inherit file="../base.html"/>
+<h1>${self.pagename()}</h1>
+% if not contacts:
+    <p>You have no contacts yet</p>
+% endif
+
+% for contact in contacts:
+    <p>${contact['username']}</p>
+% endfor
+<h2><a href="/users/search/">Find Someone You Know</a></h2>
+<%def name="pagename()">
+${profile['username']}
+</%def>

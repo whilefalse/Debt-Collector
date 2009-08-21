@@ -1,0 +1,11 @@
+<%inherit file="../base.html"/>
+<h1>${self.pagename()}</h1>
+<form method="POST" action="">
+    ${self.errormsg('username')}
+    <p><label for="username">Username</label><input type="text" name="username" id="username"></p>
+    <p><input type="submit" value="Find User"></p>
+</form>
+
+<%def name="pagename()">
+Find a User
+</%def>

@@ -1,0 +1,28 @@
+Debt Collector is a simple way to manage social micro-payments.
+
+It's useful for house sharers, students or people who have trouble tracking how much money they've lent or borrowed to friends.
+
+What are "social micropayments"?
+  - These are things like lending someone a fiver, buying a beer, paying for the water bills.
+  - They're debts and loans made between friends, which typically have 0% interest rate, and are often easy to loose track of.
+
+How does this help?
+  - Debt Collector allows you to log when friends lent you money or paid for things, or when you lent people money.
+  - It then allows you to see a really simple summary of who you owe money to, who owes you, and you're overall situation (debt or credit).
+
+
+TODO:
+  - Natural language parser, so I can type "Bob lent me 20 pounds for bowling", and this will be understood.
+  - Text message input, integrated with natural language parser, so I can log things while I'm out.
+  - Network graph, showing you and your contacts and their situations. Thinking of using Canvas for this?
+
+Colophon:
+  - It's based on web.py, with some custom stuff thrown in where I didn't like the web.py way of doing it.
+  - It uses MongoDB for all storage, including sessions (with a custom web.py session backend)
+  - It uses some of the semantic HTML5 elements like section, header, footer etc., although maybe not how they're meant to be used - I'm still experimenting with this.
+
+
+Running:
+  - You need MongoDB, pymongo and web.py installed.
+  - Then run mongod run &
+  - Then run ./debtcollector.py to start the development server.

@@ -1,0 +1,16 @@
+<%inherit file="../base.html"/>
+<h1>${self.pagename()}</h1>
+% if contact and not errors:
+    <p>Added ${contact['username']} to your contacts!</p>
+% else:
+    <form method="POST" action="">
+        ${self.errormsg('contact_name')}
+        <p><label for="contact_name">Contact Name</label><input type="text" name="contact_name" id="contact_name"></p>
+        <p><input type="submit" value="Add Contact"></p>
+    </form>
+% endif
+
+
+<%def name="pagename()">
+Find a User
+</%def>

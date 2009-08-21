@@ -1,0 +1,14 @@
+<%inherit file="../base.html"/>
+<div id="title-para"><h1>${self.pagename()}</h1><a id="add-user" href="/users/search/">Find Someone</a></div>
+% if not contacts:
+    <p>You have no contacts yet</p>
+% endif
+
+<ul>
+% for contact in contacts:
+    <li>${self.userlink(contact['username'])}</li>
+% endfor
+</ul>
+<%def name="pagename()">
+Contacts
+</%def>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${self.sitename()} | ${self.pagename()}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/colors.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/typography.css">
+    </head>  
+    <body class="${self.bodyclass()}">
+        <div id="container">
+          <header>
+            <a id="site-title" href="/">${self.sitename()}</a>
+            <!-- User nav -->
+            <nav id="user-nav">
+                <ul>
+                      % if user is not UNDEFINED and user:
+                          <li><a href="/logout/">Logout</a></li>
+                      % else:
+                          <li><a href="/login/">Login</a></li>
+                          <li><a href="/register/">Register</a></li>
+                      % endif
+                </ul>
+            </nav>
+            <!-- Main nav -->
+            <nav id="main-nav">
+                <ul>
+                  <li><a href="/summary/">Summary</a></li>
+                  <li><a href="/network/">Network</a></li>
+                  <li><a href="/contacts/">Contacts</a></li>
+                  <li><a href="/transfer/">Pay/Receive</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            ${next.body()}
+        </section>
+        <footer>
+            Copyright Steven Anderson &copy; 2009. Some Rights Reserved.
+        </footer>
+      </div>
+    </body>
+</html>
+
+      
+<%def name="pagename()">Base</%def>
+
+<%def name="bodyclass()">${self.pagename()}</%def>
+
+<%def name="sitename()">DebtCollector</%def>
+
+<%def name="errormsg(field)">
+    % if errors is not UNDEFINED and errors and  field in errors:
+        <p class="form_field_error">${errors[field]}</p>
+    % endif
+</%def>
+
+<%def name="userlink(username)">
+<a href="/users/${username}/" title="${username}">${username}</a>
+</%def>

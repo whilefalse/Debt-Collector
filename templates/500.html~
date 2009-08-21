@@ -1,0 +1,2 @@
+<%inherit file="base.html"/>
+<h1>404!</h1>

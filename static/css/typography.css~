@@ -1,0 +1,35 @@
+body{ 
+    font-family: Helvetica;
+}
+body div#container > section{ 
+    font-size:1.2em;
+}
+h1{ 
+    font-size:2em;
+    letter-spacing:-1px;
+}
+h2{ 
+    font-size:1.5em;
+    letter-spacing:-1px;
+}
+body div#container > header a#site-title{
+    font-size:1.2em;
+    font-family:Arial;
+}
+
+body div#container > header nav#main-nav li{ 
+    font-size:1.5em;
+    font-family:Arial;
+}
+body div#container > footer{ 
+    text-align:center;
+    font-size:0.8em;
+}
+
+
+/*
+ * Transfer page specific styles
+ */
+body.Transfer div#container div#money-out header, body.Transfer div#container div#money-in header{ 
+    font-size:1.5em;
+}

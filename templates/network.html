@@ -1,0 +1,16 @@
+<%inherit file="base.html"/>
+<h1>${self.pagename()}</h1>
+<p>This is your network. It does some crazy graph shit. It rocks.</p>
+<div id="graph">
+    <p class="node" style="top:${radius}%;left:${radius}%;">${self.userlink(user['username'])}</p>
+% for index, (person, (x,y)) in nodes.iteritems():
+    <p class="node" style="top:${y}%;left:${x}%;">${self.userlink(person)}</p>
+% endfor
+% for (start_coords, height, width, up_or_down, val) in paths:
+    <span class="path" style="top:${start_coords[1]}%; height:${height if height >= 5 else 5}%; left:${start_coords[0]}%; width:${width if width >= 5 else 5}%;"><img src="/static/img/${up_or_down}_slant.png"><span class="amount">${val}</span></span>
+% endfor
+</div>
+
+<%def name="pagename()">
+Network
+</%def>

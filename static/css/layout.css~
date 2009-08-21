@@ -1,0 +1,232 @@
+h1{ 
+    margin:0 0 0.5em 0;
+}
+h2{ 
+    margin:0 0 0.5em 0;
+ }
+p{ 
+   margin:0 0 0.2em 0;
+}
+li{ 
+    padding-bottom:10px;
+}
+nav, header, section, footer{ 
+    display:block;                              
+}
+body div#container{ 
+//    width:90%;
+    margin:auto;
+    min-width:960px;
+}
+body div#container div.inner{ 
+    width:90%;
+    margin:auto;                             
+}
+body div#container > header{ 
+    padding: 1em 0 0.5em 0;
+}
+body div#container > header nav li{ 
+    display:inline;                      
+}
+body div#container > header nav#main-nav li{ 
+    padding:0 5px 0 0;
+}
+body div#container > header nav#main-nav{
+    padding:2em 0px 5px 0px;                            
+} 
+body div#container > header nav#user-nav{
+    display:inline;
+    float:right;
+    margin:-1.5em 0 0 0;
+}
+body div#container > section{ 
+    min-height:600px;
+    padding:2em 0;                           
+}
+body div#container > section form label{ 
+    width:300px;
+    display:block;
+    margin: 0.1em 0 0.3em 0;
+}
+body div#container > section form p.form_field_error{
+    color:red;
+    margin-bottom:10px;
+} 
+body div#container > section form input{ 
+    margin: 0.1em 0 0.2em 0;
+    padding:2px 4px;
+    width:300px;
+}
+body div#container > section form select{ 
+    margin: 0.1em 0 0.2em 0;
+    width:308px;
+    text-align:center;
+}
+body div#container > footer{ 
+    padding:20px 5px 4px 5px;
+    height:100px;
+}
+
+
+/*
+ * Transfer page specific stylings
+*/
+body.Transfer div#container >section form label{ 
+     float:none;
+     width:auto;
+}
+body.Transfer div#container >section form input.submit{ 
+    width:310px;
+}
+body.Transfer div#container >section form input#to_value_pounds,
+body.Transfer div#container >section form input#to_value_pence,
+body.Transfer div#container >section form input#from_value_pounds,
+body.Transfer div#container >section form input#from_value_pence{
+    width:140px;
+    position:relative;
+    left:-0.4em;
+}
+body.Transfer div#container >section form input#to_value_pounds,
+body.Transfer div#container >section form input#from_value_pounds{ 
+    text-align:right;
+    margin-left:0.5em;
+}
+body.Transfer div#container >section span.currency-delim{ 
+    position:relative;
+    left:-4px;
+} 
+body.Transfer div#container div#money-out{ 
+    float:left;
+    overflow:hidden;
+    width:40%;
+    text-align:center;
+    height:400px;
+    padding:15px 10px 10px 10px;
+    border:30px solid #124577;
+    -moz-border-radius:10px;
+}
+body.Transfer div#container div#money-in{
+    float:right;
+    overflow:hidden;
+    width:40%;
+    text-align:center;
+    height:400px;
+    padding:15px 10px 10px 10px;
+    border:30px solid #124577;
+    -moz-border-radius:10px;
+}
+body.Transfer div#container div#money-out form > p,
+body.Transfer div#container div#money-in form > p{ 
+    margin-bottom:25px;
+}
+body.Transfer div#container div#money-out form > p.form_field_error,
+body.Transfer div#container div#money-in form > p.form_field_error{
+    margin-bottom:0px;
+}  
+body.Transfer div#container div#money-out header, body.Transfer div#container div#money-in header{ 
+    margin:0 0 0.7em 0;
+}
+
+
+/*
+ * Summary page specific stylings
+*/
+body.Summary div#container table { 
+    border:2px solid #124577;
+    border-width:1px 2px;
+    width:100%;
+}
+body.Summary div#container td, body.Summary div#container th{
+    padding:5px 30px;
+    border:1px solid #555555;
+    text-align:center;
+    border-width:1px 0px;
+}
+body.Summary div#container tr.from{ 
+    background-color:#aaeeaa;
+    background-image:url(/static/img/ic/add.png);
+    background-repeat:no-repeat;
+    background-position:5px center;
+}
+body.Summary div#container tr.to{ 
+    background-color:#eeaaaa;
+    background-image:url(/static/img/ic/delete.png);
+    background-repeat:no-repeat;
+    background-position:5px center;
+}
+body.Summary div#container p#uber-summary
+{ 
+    border:10px solid #124577;
+    -moz-border-radius:10px;
+    padding:7px 0px;
+}
+body.Summary div#container div#people-owe,
+body.Summary div#container div#people-owed{ 
+    float:left;
+    width:46%;
+    border:5px solid #124577;
+    -moz-border-radius:5px;
+    padding:5px 10px 10px 10px;
+    margin:10px 0 40px 0;
+    text-align:center;
+}
+body.Summary div#container div#people-owe header,
+body.Summary div#container div#people-owed header{ 
+    font-size:1.1em;
+    text-align:center;
+    margin:0 0 10px 0;
+    border-bottom:1px dotted black;
+    padding:0 0 10px 0;
+}
+body.Summary div#container div#people-owed{
+     border-color:#557755;
+}
+body.Summary div#container div#people-owe{
+     border-color:#dd3333;
+}
+body.Summary div#container div#people-owed{ 
+    float:right;
+}
+
+body.Summary div#container div#people-owe li,
+body.Summary div#container div#people-owed li{ 
+    padding-bottom:10px;
+}
+body.Summary div#container div#owe-and-owed-boxes{ 
+    overflow:hidden;
+    clear:both;
+}
+
+/*
+ * Contacts specific styles
+ */
+body.Contacts div#container div#title-para{ 
+    margin-bottom:30px;
+}
+body.Contacts div#container a#add-user{ 
+    font-size:0.7em;
+    margin-left:5px;
+    margin-bottom:20px;
+}
+body.Contacts div#container a#add-user:link{ 
+    color:#5C4FE8;    
+    text-decoration:underline;
+}
+body.Contacts div#container a#add-user:visited{ 
+    color:#5C4FE8;    
+
+    text-decoration:underline;
+}
+body.Contacts div#container a#add-user:active{ 
+    color:#5C4FE8;    
+    text-decoration:none;
+}
+body.Contacts div#container a#add-user:hover{ 
+    color:#5C4FE8;    
+}
+body.Contacts div#container li{ 
+    padding-bottom:5px;
+}
+body.Contacts div#container h1{ 
+    display:inline;
+}

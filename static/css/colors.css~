@@ -1,0 +1,65 @@
+body{ 
+    color:#333333;
+}
+h1{ 
+    color:#aa3435;
+}
+h2{ 
+    color:#aa3435;
+}
+body div#container > header{ 
+    background-color:#e8c573;
+    border:solid #f8d583;
+    border-width:5px 0px 5px 0px;
+}
+body div#container > header a:link{
+    color:#343434; 
+}
+body div#container > header a:visited{
+    color:#343434; 
+}
+body div#container > header a:active{
+    color:#343434; 
+}
+body div#container > header a:hover{
+    color:#565656; 
+}
+body div#container > header nav#main-nav li a:link{ 
+    color: #5c4fe8;
+}
+body div#container > header nav#main-nav li a:visited{ 
+    color: #5c4fe8;
+}
+body div#container > header nav#main-nav li a:active{
+    color: black;
+}
+body div#container > header nav#main-nav li a:hover{ 
+    color:white;                                       
+}
+body div#container > header nav#user-nav li a:link{ 
+    color: #5c4fe8;
+}
+body div#container > header nav#user-nav li a:visited{ 
+    color: #5c4fe8;
+}
+body div#container > header nav#user-nav li a:active{
+    color: black;
+}
+body div#container > header nav#user-nav li a:hover{ 
+    color:white;                                       
+}
+body div#container > section form input, body div#container > section form select{ 
+    border:1px solid black;
+}
+body div#container > footer{ 
+    border-top:10px solid #555555;
+    background-color:black;
+    color:white;
+}
+
+/*
+ * Transfer page specific styles
+ */
+body.Transfer div#container div#money-out header, body.Transfer div#container div#money-in header{ 
+    color:blue;
+}

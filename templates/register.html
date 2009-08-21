@@ -1,0 +1,17 @@
+<%inherit file="base.html"/>
+${self.errormsg('__all__')}
+<h1>${self.pagename()}</h1>
+
+<form action="" method="POST">
+    ${self.errormsg('username')}
+    <p><label for="username">Username</label><input name="username" id="username" type="text"></p>
+    ${self.errormsg('password')}
+    <p><label for="password">Password</label><input name="password" id="password" type="password"></p>
+    ${self.errormsg('password_again')}
+    <p><label for="password_again">Password Again</label><input name="password_again" id="password_again" type="password"></p>  
+    <p><input name="register" type="submit" value="Register"></p>
+</form>
+
+<%def name="pagename()">
+Register
+</%def>

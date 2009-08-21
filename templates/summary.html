@@ -1,0 +1,56 @@
+<%inherit file="base.html"/>
+<h1>${self.pagename()}</h1>
+<p id="uber-summary">
+% if balance < 0:
+You owe <span class="owe">${u'£%.2f' % abs(balance)}</span>
+% else:
+You are owed <span class="owed">${u'£%.2f' % abs(balance)}</span>
+% endif
+</p>
+<div id="owe-and-owed-boxes">
+<div id="people-owe">
+<header>People you owe</header>
+<ul>
+  % if not you_owe_people:
+      <li>You don't owe anyone anything. Woohoo!</li>
+  % endif
+  % for (username, (user, value)) in you_owe_people.iteritems():
+      <li>${self.userlink(user['username'])} - <strong>${value}</strong></li>
+  % endfor
+</ul>
+</div>
+<div id="people-owed">
+<header>People who owe you</header>
+<ul>
+  % if not people_owe_you:
+      <li>Noone owes you anything :(</li>
+  % endif
+  % for (username, (user,value)) in people_owe_you.iteritems():
+      <li>${self.userlink(user['username'])} - <strong>${value}</strong></li>
+  % endfor
+</ul>
+</div>
+</div>
+<h2>Transactions</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Amount</th>
+    <th>Reason</th>
+  </tr> 
+  % for t in transactions:
+    <tr class="${'from' if t['from_user'] else 'to'}">
+      <td>${t['timestamp']}</td>
+      <td>${self.userlink(t['from_user']['username']) if t['from_user'] else ''}</td>
+      <td>${self.userlink(t['to_user']['username']) if t['to_user'] else ''}</td>
+      <td>${t['value']}</td>
+      <td class="reason">${t['reason']}</td>
+    </tr>
+  % endfor
+</table>
+
+<%def name="pagename()">
+Summary
+</%def>

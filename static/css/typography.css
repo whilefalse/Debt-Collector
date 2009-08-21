@@ -1,0 +1,53 @@
+body{ 
+    font-family: Helvetica;
+}
+body div#container > section{ 
+    font-size:1.2em;
+}
+h1{ 
+    font-size:2em;
+    letter-spacing:-1px;
+}
+h2{ 
+    font-size:1.5em;
+    letter-spacing:-1px;
+}
+strong{ 
+    font-weight:bold;
+}
+body div#container > header a#site-title{
+    font-size:1.2em;
+    font-family:Arial;
+}
+
+body div#container > header nav#main-nav li{ 
+    font-size:1.5em;
+    font-family:Arial;
+}
+body div#container > footer{ 
+    text-align:center;
+    font-size:0.8em;
+}
+
+
+/*
+ * Transfer page specific styles
+ */
+body.Transfer div#container div#money-out header, body.Transfer div#container div#money-in header{ 
+    font-size:1.7em;
+    padding-bottom:14px;
+    border-bottom:2px dotted;
+}
+
+/*
+ * Summary page specific styles
+ */
+body.Summary div#container th{ 
+    font-weight:bold;
+    font-size:1.1em;
+    text-align:center;
+}
+body.Summary div#container p#uber-summary{ 
+    font-size:2em;
+    text-align:center;
+}

@@ -1,0 +1,13 @@
+<%inherit file="base.html"/>
+<h1>${self.pagename()}</h1>
+<p id="strapline">DebtCollector is a really simple way to manage your social micro-debts.</p>
+<ul id="features">
+    <li><p>Manage your contacts<p><p><img src="/static/img/examples/contacts.png"></p></li>
+    <li><p>Log your tranfers of money<p><p><img src="/static/img/examples/transfer.png"></p></li>
+    <li><p>Keep track of how much you owe or are owed<p><p><img src="/static/img/examples/summary.png"></p></li>
+    <li>View an interactive network of your contacts(to come)</li>
+    <li><p>No more "Did I pay you back for that beer?"<p></li>
+</ul>
+
+<%def name="bodyclass()">Home</%def>
+<%def name="pagename()">Welcome to DebtCollector!</%def>
