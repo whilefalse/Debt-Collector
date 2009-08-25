@@ -43,11 +43,11 @@ session = web.session.Session(app, MongoStore(db, 'sessions'))
 users.session = session
 users.collection = db.users
 
-class Index:
+class Index(object):
     def GET(self):
         return render('home.html')
 
-class Login:
+class Login(object):
     def GET(self):
         next = web.input(_method='GET').get('next','/summary/')
         return render('login.html', next=next)
@@ -69,7 +69,7 @@ class Login:
         else:
             return web.seeother(post.get('next','/summary/'))
 
-class Register:
+class Register(object):
     def GET(self):
         return render('register.html')
 
@@ -94,12 +94,12 @@ class Register:
             users.register(username=username, password=users.pswd(password), contacts=[])
             web.seeother('/login/')            
 
-class Logout:
+class Logout(object):
     def GET(self):
         users.logout()
         return web.seeother('/')
 
-class Network:
+class Network(object):
     @users.login_required
     def GET(self):
         user = users.get_user()
@@ -182,7 +182,7 @@ class Network:
                 
 
 
-class Contacts:
+class Contacts(object):
     @users.login_required
     def GET(self):
         try:
@@ -191,12 +191,12 @@ class Contacts:
             contacts = []
         return render('/contacts/index.html', contacts=contacts)
 
-class AddContact:
+class AddContact(object):
     @users.login_required
     def GET(self):
         return render('/contacts/add.html')
 
-class UserSearch:
+class UserSearch(object):
     @users.login_required
     def GET(self):
         return render('/users/search.html')
@@ -216,7 +216,7 @@ class UserSearch:
         else:
             return render('/users/search.html', errors=errors)
 
-class Profile:
+class Profile(object):
     @users.login_required
     def GET(self, username):
         contact = db.users.find_one({'username':username})
@@ -272,7 +272,7 @@ class Profile:
             connected = False
         return connected
 
-class Transfer:
+class Transfer(object):
     @users.login_required
 
     def _deref_contacts(self):
@@ -347,7 +347,7 @@ class Transfer:
             return render('transfer.html', errors=errors, user=self._deref_contacts())
 
 
-class Summary():
+class Summary(object):
     @users.login_required
     def GET(self):
         user = users.get_user()

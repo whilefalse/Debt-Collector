@@ -1,5 +1,4 @@
 from web.session import Store
-from pymongo.son_manipulator import AutoReference, NamespaceInjector
 import time
 
 class MongoStore(Store):
